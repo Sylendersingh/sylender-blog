@@ -1,0 +1,344 @@
+/* Basic Resets & Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #141414; /* Dark background */
+    color: #E5E5E5; /* Light text color */
+    overflow-x: hidden;
+}
+
+a {
+    color: #E5E5E5;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    color: #FFFFFF;
+    margin-top: 0;
+}
+
+/* 1. NAVBAR STYLES */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1A1A1A;
+    border-bottom: 1px solid #282828;
+}
+
+.navbar .logo {
+    color: #FFFFFF; /* Sylender Name */
+    font-size: 1.8em; 
+    font-weight: 800;
+    margin-right: 20px;
+    letter-spacing: 1px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 8px 15px;
+    flex-grow: 1;
+    max-width: 400px;
+    margin-right: 20px;
+}
+
+.navbar .search-bar i {
+    color: #999;
+    margin-right: 10px;
+}
+
+.navbar .search-bar input {
+    background: none;
+    border: none;
+    color: #E5E5E5;
+    font-size: 1em;
+    width: 100%;
+    outline: none;
+}
+
+.navbar .nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-icons i {
+    font-size: 1.2em;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.navbar .profile-pic {
+    width: 30px;
+    height: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #E5E5E5;
+    padding: 10px 0;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #282828;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    border-radius: 5px;
+    right: 0;
+    top: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #E5E5E5;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #3a3a3a;
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Mobile Bottom Navigation (Hidden on Desktop) */
+.mobile-bottom-nav {
+    display: none;
+    background-color: #1A1A1A;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #282828;
+    z-index: 1000;
+}
+
+.mobile-bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7em;
+    color: #999;
+    padding: 5px;
+}
+
+.mobile-bottom-nav .nav-item i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.mobile-bottom-nav .nav-item.active {
+    color: #E5E5E5;
+}
+
+/* Mobile Menu Toggle (Hidden on Desktop) */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    color: #E5E5E5;
+    cursor: pointer;
+}
+
+/* 2. MAIN CONTAINER & HERO SECTION */
+.container {
+    padding: 20px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #222;
+}
+
+.hero-section .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.hero-section .hero-text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #FFFFFF;
+    z-index: 10;
+}
+
+.hero-section .hero-text h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section .hero-text button {
+    background-color: #E50914; /* Accent Red */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.hero-section .hero-text button:hover {
+    background-color: #FF2636;
+}
+
+/* 3. CONTENT ROWS & CARDS (Netflix Style) */
+.content-row {
+    margin-bottom: 50px;
+}
+
+.content-row h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.card-carousel {
+    display: flex;
+    overflow-x: auto; /* Horizontal scrolling enabled */
+    gap: 20px;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #E50914 #333;
+}
+
+/* Custom scrollbar for Webkit browsers */
+.card-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card-carousel::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.card-carousel::-webkit-scrollbar-thumb {
+    background-color: #E50914;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+
+.blog-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background-color: #282828;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blog-card h3 {
+    font-size: 1.1em;
+    padding: 10px 15px 5px;
+    color: #FFFFFF;
+}
+
+.blog-card p {
+    font-size: 0.9em;
+    color: #BBBBBB;
+    padding: 0 15px 15px;
+    margin: 0;
+}
+
+/* 4. RESPONSIVE DESIGN (MOBILE ADJUSTMENTS) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .navbar .search-bar,
+    .navbar .nav-icons {
+        display: none;
+    }
+
+    .navbar .logo {
+        flex-grow: 1;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .mobile-bottom-nav {
+        display: flex;
+    }
+
+    .container {
+        padding: 15px;
+        margin-bottom: 70px; /* Space for the bottom nav */
+    }
+
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-section .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .blog-card {
+        width: 200px;
+    }
+
+    .blog-card img {
+        height: 120px;
+    }
+}
