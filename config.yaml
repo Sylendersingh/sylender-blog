@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main  # Ensure this matches your GitHub branch name (main or master)
+  
+publish_mode: editorial_workflow
+
+media_folder: "assets/images" 
+public_folder: "/assets/images"
+
+collections:
+  - name: "blog"
+    label: "Sylender Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Category", name: "category", widget: "string", default: "Technology"}
