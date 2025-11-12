@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "Sylender Blog" }}</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Sylender</div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="nav-icons">
+            <i class="fas fa-bell"></i>
+            <div class="profile-pic"></div>
+            <div class="dropdown">
+                <button class="dropbtn">Browse <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="/">Home</a>
+                    <a href="/categories/">Categories</a> 
+                    <a href="#">New Releases</a>
+                    <a href="#">Settings</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    <div class="mobile-bottom-nav">
+        <a href="/" class="nav-item active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="/categories/" class="nav-item"><i class="fas fa-compass"></i><span>Browse</span></a>
+        <a href="#" class="nav-item"><i class="fas fa-bell"></i><span>Notifications</span></a>
+        <a href="#" class="nav-item"><i class="fas fa-comments"></i><span>Messages</span></a>
+        <a href="#" class="nav-item"><i class="fas fa-user"></i><span>Profile</span></a>
+    </div>
+
+    <main class="container">
+        {{ content | safe }} 
+    </main>
+
+    <script>
+        document.querySelector('.dropbtn').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn') && !event.target.matches('.dropbtn *')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
