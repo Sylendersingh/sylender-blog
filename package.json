@@ -1,0 +1,17 @@
+{
+  "name": "sylender-blog",
+  "version": "1.0.0",
+  "description": "Sylender Blog with Eleventy and Netlify CMS",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "keywords": [
+    "11ty",
+    "netlify",
+    "cms"
+  ],
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
